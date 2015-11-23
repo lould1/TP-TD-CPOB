@@ -5,28 +5,31 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ApplicationSession {
+import junit.framework.*;
+
+public class ApplicationSession extends TestCase{
 	
-	// Exercice 1 : Gérer l'internationation
-	protected /* Objet permettant la gestion des 'resources bundle' */ resourceBundle;
-	protected /* Objet permettant la gestion des Locales */ locale;
+	// Exercice 1 : G茅rer l'internationation
+	protected /* Objet permettant la gestion des 'resources bundle' */ResourceBundle resourceBundle;
+	protected Locale locale;
 	
 	// Exercice 2 : Logger
 	protected Logger sessionGuiLogger;
 	protected Logger sessionExceptionLogger;
 
 
-	private /*Qu'est ce qu'un singleton ?*/ ApplicationSession session = null;
+	private static /*Qu'est ce qu'un singleton ?*/ ApplicationSession session = null;
 	private ApplicationSession() {
-		/* Definir US comme locale par défaut */
-		Locale./* à compléter */
+		/* Definir US comme locale par d茅faut */
+		Locale.setDefault(locale.US);/* �� compl茅ter */
 		
 		locale = Locale.getDefault();
-		resourceBundle = /* à compléter */
-		sessionGuiLogger = /* Initialiser le logger */
-		sessionGuiLogger.setLevel(/* Touls les message doivent être affiché */));
-		sessionExceptionLogger = /* Logger pour exception */
-		sessionExceptionLogger.setLevel(/* Touls les message doivent être affiché */);
+		//resourceBundle = new ApplicationSession();/* �� compl茅ter */
+		ResourceBundle resourceBundle = ResourceBundle.getBundle("edu.iut.res.ExampleResourceBundle"); 
+		
+		sessionGuiLogger.setLevel(Level.ALL);
+		sessionExceptionLogger = sessionGuiLogger.getLogger(Logger.GLOBAL_LOGGER_NAME); /* Logger pour exception */;
+		sessionExceptionLogger.setLevel(Level.ALL);
 	}
 	
 	
@@ -47,7 +50,8 @@ public class ApplicationSession {
 	public void setLocale(Locale locale){
 		this.locale = locale;
 		Locale.setDefault(this.locale);
-		resourceBundle=/* récupérer les resources */
+		//resourceBundle=/* r茅cup茅rer les resources */
+	resourceBundle = ResourceBundle.getBundle("edu.iut.res.ExampleResourceBundle"); 
 	}
 	
 	public String getString(String key) {

@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ArrayList<Caractere> car = new ArrayList<Caractere>();
+		String texte;
+		
+		System.out.println("Tapez t pour rentrer le texte sur console ou un autre caractère pour lire sur fichier (fichier situé à la racine, fichier.txt)");
+		Scanner sc = new Scanner(System.in);
+		char rep = sc.nextLine().charAt(0);
+		
+			if (rep == 't')
+				texte = Saisie.saisieClavier(car);
+			else
+				texte = Saisie.saisirFichier("fichier.txt", car);
+		sc.close();
+		
+		System.out.println("\n\nVoici la fréquence des caractères de votre texte saisi : ");
+		Affichage.afficherFreq(car);
+		
+		ArbreBinaire A = Huffman.genererArbreHuffman(car);
+		System.out.println("\nVoici l'arbre binaire A, trié selon l'algorithme d'Huffman : ");
+		Affichage.afficherArbreBinaire(A);
+		
+		Huffman.genererCodageCaracteres(A);
+		System.out.println("\nVoici le codage de chaque lettre : ");
+		Affichage.afficherCodage(car);
+		
+		String texteEncoder = Huffman.encoder(car, texte);
+		System.out.println("\n\nVoici le texte encodé sur " + texteEncoder.length() +" bits : \n" + texteEncoder);
+		
+		String texteDecoder = Huffman.decoder(A, texteEncoder);
+		System.out.println("\nVoici le texte décodé sur " + texte.length()*8 + " bits : \n" + texteDecoder);
+		
+		System.out.println("\nEt votre texte de départ était : \n" + texte);
+	}
+
+}

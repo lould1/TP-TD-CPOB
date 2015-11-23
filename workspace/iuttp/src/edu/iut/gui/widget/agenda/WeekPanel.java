@@ -12,7 +12,7 @@ public class WeekPanel extends EventPanel {
 	// Exercice 4
 	public enum WeekDayNames {
 		EMPTYDAY("",""),
-		MONDAY(/* Internationalisation */),
+		MONDAY(),
 		TUESDAY(/* Internationalisation */),
 		WEDNESDAY(/* Internationalisation */),
 		THURSDAY(/* Internationalisation */),
