@@ -29,7 +29,7 @@
 		<item value="false" key="nodeprecatedlist"/>
 		<item value="false" key="notree"/>
 		<item value="true" key="splitindex"/>
-		<item value="F:\Cours\S3\poa\iutjava\workspace\AbstractApplicationLog.java;F:\Cours\S3\poa\iutjava\workspace\iuttp\src\edu\iut\app\AbstractApplicationLog.java" key="javadoc_command_history"/>
+		<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\src\edu\iut\app\ApplicationSessionTest.java;F:\Cours\S3\poa\iutjava\workspace\AbstractApplicationLog.java;F:\Cours\S3\poa\iutjava\workspace\iuttp\src\edu\iut\app\AbstractApplicationLog.java" key="javadoc_command_history"/>
 		<item value="true" key="use"/>
 		<item value="false" key="nonavbar"/>
 		<item value="public" key="access"/>
@@ -47,8 +47,8 @@
 		<section name="projects">
 			<section name="iuttp">
 				<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\doc" key="destdir"/>
+				<item value="http://junit-team.github.io/junit/javadoc/latest/;http://junit.sourceforge.net/junit3.8.1/javadoc/;http://hamcrest.org/JavaHamcrest/javadoc/1.3/" key="href"/>
 				<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\javadoc.xml" key="antpath"/>
-				<item value="" key="href"/>
 			</section>
 		</section>
 	</section>

@@ -10,7 +10,7 @@ public abstract class AbstractApplicationLog implements IApplicationLog {
 	public AbstractApplicationLog() {
 		message = null;
 		listeners = new ArrayList<IApplicationLogListener>();
-	
+	}
 	
 	@Override
 	public abstract void setMessage(String message);
