@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
+import edu.iut.gui.listeners.*;
+
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
@@ -50,12 +52,86 @@ public class SchedulerFrame extends JFrame {
 		JMenuItem menuItem;
 		
 		/* File Menu */
-		/** EX4 : MENU : UTILISER L'AIDE FOURNIE DANS LE TP**/
-		
-		
 		menu = new JMenu("File");
 		
+		menuItem = new JMenuItem("Load");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
 		
+		menuItem = new JMenuItem("Save");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		
+		menuItem = new JMenuItem("Quit");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);		
+		menuBar.add(menu);
+		
+		/* Edit Menu */
+		menu = new JMenu("Edit");
+		JMenu submenu = new JMenu("View");
+		menuItem = new JMenuItem("Day");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.DAY_VIEW.name());	
+			}			
+		});		
+		submenu.add(menuItem);
+		menuItem = new JMenuItem("Week");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.WEEK_VIEW.name());		
+			}			
+		});		
+		submenu.add(menuItem);
+		menuItem = new JMenuItem("Month");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				layerLayout.show(contentPane,ActiveView.MONTH_VIEW.name());		
+			}			
+		});		
+		submenu.add(menuItem);
+		menu.add(submenu);
+		menuBar.add(menu);
+		
+		/* Help Menu */
+		menu = new JMenu("Help");
+		menuItem = new JMenuItem("Display");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// EX 4 : ajouter l'aide
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		menuItem = new JMenuItem("About");
+		menuItem.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				JOptionPane.showMessageDialog(null, "Not yet implemented", "info", JOptionPane.INFORMATION_MESSAGE, null);		
+			}			
+		});
+		menu.add(menuItem);
+		menuBar.add(menu);
 		this.setJMenuBar(menuBar);
 		this.pack();
 		layerLayout.next(contentPane);
@@ -77,6 +153,8 @@ public class SchedulerFrame extends JFrame {
 		setupUI();
 
 	}
+
+	
 	public SchedulerFrame(String title) {
 		super(title);
 		addWindowListener (new WindowAdapter(){

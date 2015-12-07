@@ -12,62 +12,48 @@ public class ExamEvent {
 		
 	}
 	
-	/** EX2: FAITE LES ACCESSEURS DES ATTRIBUTS, AJOUTER DES ATTRIBUT ? **/
-	protected Date examDate;
-	protected Person student;
-	protected Classroom classroom;
-	protected ArrayList<Person> jury;
-	protected ArrayList<Document> documents;
+	public void setDate(Date date) {
+		this.examDate = date;
+	}
 	
-	public Date getExamDate() {
+	public Date getDate() {
 		return examDate;
 	}
-
-	public void setExamDate(Date examDate) {
-		this.examDate = examDate;
-	}
-
-	public Person getStudent() {
-		for(int i=0;i<jury.size();i++){
-			student=jury.get(i);
-		}
-		return student;
-	}
-
+	
 	public void setStudent(Person student) {
 		this.student = student;
 	}
-
-	public ArrayList<Person> getJury() {
-		
-		return jury;
+	public Person getStudent() {
+		return student;
 	}
-
+	
 	public void setJury(ArrayList<Person> jury) {
 		this.jury = jury;
 	}
-
-	public Classroom getClassroom() {
-		return classroom;
+	public ArrayList<Person> getJury() {
+		return jury;
 	}
-
+	
 	public void setClassroom(Classroom classroom) {
 		this.classroom = classroom;
 	}
-
+	public Classroom getClassroom() {
+		return classroom;
+	}
+	
+	
+	public void setDocuments(ArrayList<Document> documents) {
+		this.documents = documents;
+	}
 	public ArrayList<Document> getDocuments() {
-		
 		return documents;
 	}
-
-	public void setDocuments(ArrayList<Document> documents) {
-		
-			this.documents=documents;
-		
-	}
-
-	
 	
 
+	protected Date examDate;
+	protected Person student;
+	protected ArrayList<Person> jury;
+	protected Classroom classroom;
+	protected ArrayList<Document> documents;
 	 
 }
