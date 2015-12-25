@@ -8,10 +8,13 @@ import edu.iut.app.ExamEvent;
 
 public class XMLProjectWriter {
 	
-	public XMLProjectWriter() {		
+	public XMLProjectWriter() {	
+		
+	
 	}
 	
 	public void save(ArrayList<ExamEvent> data, java.io.File xmlfile) {
 		
 	}
 }
+

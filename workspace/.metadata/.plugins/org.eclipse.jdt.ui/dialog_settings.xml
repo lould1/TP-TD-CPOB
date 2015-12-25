@@ -15,11 +15,22 @@
 	</section>
 	<section name="JavaElementSearchActions">
 	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
 	</section>
-	<section name="quick_assist_proposal_size">
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="31" key="DIALOG_Y_ORIGIN"/>
+			<item value="41" key="DIALOG_X_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		</section>
 	</section>
 	<section name="javadoc">
 		<item value="false" key="nodeprecatedlist"/>
@@ -43,27 +54,16 @@
 		<section name="projects">
 			<section name="iuttp">
 				<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\doc" key="destdir"/>
-				<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\javadoc.xml" key="antpath"/>
 				<item value="http://junit-team.github.io/junit/javadoc/latest/;http://junit.sourceforge.net/junit3.8.1/javadoc/;http://hamcrest.org/JavaHamcrest/javadoc/1.3/" key="href"/>
+				<item value="F:\Cours\S3\poa\iutjava\workspace\iuttp\javadoc.xml" key="antpath"/>
 			</section>
-		</section>
-	</section>
-	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
-		<item value="true" key="ShowStatusLine"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
-		<section name="DialogBoundsSettings">
-			<item value="600" key="DIALOG_WIDTH"/>
-			<item value="31" key="DIALOG_Y_ORIGIN"/>
-			<item value="500" key="DIALOG_HEIGHT"/>
-			<item value="41" key="DIALOG_X_ORIGIN"/>
-			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		</section>
 	</section>
 	<section name="JavadocWizardDialog">
 		<item value="616" key="DIALOG_WIDTH"/>
 		<item value="94" key="DIALOG_Y_ORIGIN"/>
-		<item value="67" key="DIALOG_X_ORIGIN"/>
 		<item value="566" key="DIALOG_HEIGHT"/>
+		<item value="67" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

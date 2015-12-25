@@ -1,11 +1,17 @@
 package edu.iut.app;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ResourceBundle;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ApplicationSession {
+public class ApplicationSession implements Serializable {
 	
 	protected ResourceBundle resourceBundle;
 	protected Locale locale;
@@ -13,6 +19,9 @@ public class ApplicationSession {
 	protected Logger sessionExceptionLogger;
 	protected String[] months;
 	protected String[] days;
+	
+	
+	
 
 
 	private static ApplicationSession session = null;
@@ -70,5 +79,29 @@ public class ApplicationSession {
 		return months;
 	}
 	
-	
+	//ex3-Sérialiser les objets
+	public void enregistreApp(){
+		
+		File etatApplication = new File("../../../../workspace");
+		ObjectOutputStream oos = null;
+		
+		try {
+			oos=new ObjectOutputStream(new FileOutputStream(etatApplication));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} /* declaration & ouverture flux*/
+		
+	try {
+		oos.writeObject(etatApplication);
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+		
+	}
 }

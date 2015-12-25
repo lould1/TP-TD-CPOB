@@ -6,19 +6,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
 
 import edu.iut.gui.listeners.*;
-
 import edu.iut.gui.widget.agenda.AgendaPanelFactory;
 import edu.iut.gui.widget.agenda.ControlAgendaViewPanel;
 import edu.iut.gui.widget.agenda.AgendaPanelFactory.ActiveView;
+
+import java.sql.*;
 
 
 public class SchedulerFrame extends JFrame {
@@ -31,6 +36,15 @@ public class SchedulerFrame extends JFrame {
 	
 	protected void setupUI() {
 		
+		JEditorPane jEditorPane = new JEditorPane();
+		 jEditorPane.setEditable(false);
+		 JScrollPane scrollPane = new JScrollPane(jEditorPane);
+	        
+		 // add an html editor kit
+	        HTMLEditorKit kit = new HTMLEditorKit();
+	        jEditorPane.setEditorKit(kit);
+	        
+	        
 		contentPane = new JPanel();
 		layerLayout = new CardLayout();
 		contentPane.setLayout(layerLayout);
@@ -113,6 +127,7 @@ public class SchedulerFrame extends JFrame {
 		menuBar.add(menu);
 		
 		/* Help Menu */
+		//button = new JButton("<html><b><u>T</u>wo</b><br>lines</html>");
 		menu = new JMenu("Help");
 		menuItem = new JMenuItem("Display");
 		menuItem.addActionListener(new ActionListener() {
@@ -135,6 +150,11 @@ public class SchedulerFrame extends JFrame {
 		this.setJMenuBar(menuBar);
 		this.pack();
 		layerLayout.next(contentPane);
+		
+		
+		Document doc = kit.createDefaultDocument();
+        jEditorPane.setDocument(doc);
+       
 	}
 	
 	public SchedulerFrame() {
@@ -163,6 +183,38 @@ public class SchedulerFrame extends JFrame {
 			}
 		});
 		setupUI();
+	}
+	public void activerMenuHelp(JMenuItem menuItem){
+		JMenu menu = null;		
+		menu.add(menuItem);
+		
+	}
+	public void activerMenuAbout(JMenuItem menuItem){
+		JMenu menu = null;		
+		menu.add(menuItem);
+		
+	}
+	public void activerMenuSave(JMenuItem menuItem){
+		JMenu menu = null;		
+		menu.add(menuItem);
+		
+	}
+	public void activerMenuLoad(JMenuItem menuItem){
+		JMenu menu = null;		
+		menu.add(menuItem);
+		
+	}
+	
+	public void baseDonnee(){
+		 Connection c = null;
+		    try {
+		      Class.forName("org.sqlite.JDBC");
+		      c = DriverManager.getConnection("jdbc:sqlite:test.db");
+		    } catch ( Exception e ) {
+		      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+		      System.exit(0);
+		    }
+		    System.out.println("Opened database successfully");
 	}
 	
 }
